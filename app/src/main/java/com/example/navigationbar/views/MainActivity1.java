@@ -51,7 +51,7 @@ public class MainActivity1 extends AppCompatActivity {
 
 
                     case R.id.info:
-                        fragment = new InfoFragment();
+                        fragment = new SchedeFragment();
                         activityMain1Binding.viewPager.setCurrentItem(0);
                         break;
 

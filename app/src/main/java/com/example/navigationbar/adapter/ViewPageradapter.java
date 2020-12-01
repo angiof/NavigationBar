@@ -7,7 +7,7 @@ import androidx.fragment.app.FragmentStatePagerAdapter;
 
 import com.example.navigationbar.views.ChatFragment;
 import com.example.navigationbar.views.HomeFragment;
-import com.example.navigationbar.views.InfoFragment;
+import com.example.navigationbar.views.SchedeFragment;
 
 public class ViewPageradapter extends FragmentStatePagerAdapter {
 
@@ -23,7 +23,7 @@ public class ViewPageradapter extends FragmentStatePagerAdapter {
 
 
             case 0:
-                return new InfoFragment();
+                return new SchedeFragment();
 
             case 1:
                 return new HomeFragment();
