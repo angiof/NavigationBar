@@ -12,8 +12,8 @@ import androidx.room.Room;
 import com.example.navigationbar.LeTueSchedePackage.Database.SchedeDatabase;
 import com.example.navigationbar.R;
 import com.example.navigationbar.databinding.ActivityEditBinding;
+import com.example.navigationbar.views.MainActivity1;
 import com.example.navigationbar.views.SchedeFragment;
-
 import com.google.android.material.appbar.CollapsingToolbarLayout;
 import com.google.android.material.floatingactionbutton.FloatingActionButton;
 import com.google.android.material.snackbar.Snackbar;
@@ -37,9 +37,9 @@ public class EditActivity extends AppCompatActivity {
         activityEditBinding= ActivityEditBinding.inflate(getLayoutInflater());
         setContentView(activityEditBinding.getRoot());
 
-        Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
+        Toolbar toolbar = findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
-        CollapsingToolbarLayout toolBarLayout = (CollapsingToolbarLayout) findViewById(R.id.toolbar_layout);
+        CollapsingToolbarLayout toolBarLayout = findViewById(R.id.toolbar_layout);
         toolBarLayout.setTitle(" "); //spazio obbligatorio
 
         //textnote è richiamato nei due contest scrolling
@@ -63,23 +63,25 @@ public class EditActivity extends AppCompatActivity {
         }
 
         //aggiunge o modifica database
-        FloatingActionButton fab = (FloatingActionButton) findViewById(R.id.fab);
+        FloatingActionButton fab = findViewById(R.id.fab);
         fab.setOnClickListener((view)-> {
            String titleEdit = activityEditBinding.editTitle.getText().toString().trim();
             String textEdit = textschede.getText().toString().trim();
             if(!titleEdit.isEmpty() || !textEdit.isEmpty()){
-               if (action=='a'){
-                   //aggiungi al database
-                   db.schedeDao().insertALL(new Schede(titleEdit,textEdit));
+                if (action == 'a') {
+                    //aggiungi al database
+                    db.schedeDao().insertALL(new Schede(titleEdit, textEdit));
 
-               }else if (action=='e'){
-                   //modifica database
-                   db.schedeDao().delete(schede);
-                   db.schedeDao().insertALL(new Schede(titleEdit,textEdit));
-               }
-               SchedeFragment.adapterNotifyAll();
+                } else if (action == 'e') {
+                    //modifica database
+                    db.schedeDao().delete(schede);
+                    db.schedeDao().insertALL(new Schede(titleEdit, textEdit));
+                }
+                SchedeFragment.adapterNotifyAll();
                 finish();
-                Intent intent = new Intent(this,SchedeFragment.class);
+                Intent intent = new Intent(this, MainActivity1.class);
+                intent.putExtra("key0", "cambiofrag");
+
                 startActivity(intent);
 
             } else {

@@ -5,14 +5,14 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:fitsSystemWindows="true"
-    tools:context=".EditActivity">
+    tools:context=".LeTueSchedePackage.EditActivity">
 
     <com.google.android.material.appbar.AppBarLayout
         android:id="@+id/app_bar"
         android:layout_width="match_parent"
-        android:layout_height="@dimen/app_bar_height"
+        android:layout_height="180dp"
         android:fitsSystemWindows="true"
-        android:theme="@style/Theme.Note.AppBarOverlay">
+        android:theme="@style/Theme.NavigationBar">
 
         <com.google.android.material.appbar.CollapsingToolbarLayout
             android:id="@+id/toolbar_layout"
@@ -24,17 +24,17 @@
             app:toolbarId="@+id/toolbar">
 
 
-       <com.google.android.material.textfield.TextInputLayout
-          android:layout_width="match_parent"
-           android:layout_height="match_parent"
-           android:layout_gravity="bottom"
+            <com.google.android.material.textfield.TextInputLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_gravity="bottom"
 
-           android:padding="25dp"
-           android:layout_marginTop="30dp">
+                android:padding="25dp"
+                android:layout_marginTop="30dp">
 
-           <com.google.android.material.textfield.TextInputEditText
-               android:layout_width="match_parent"
-               android:layout_height="70dp"
+                <com.google.android.material.textfield.TextInputEditText
+                    android:layout_width="match_parent"
+                    android:layout_height="70dp"
                android:id="@+id/editTitle"
                android:inputType="text"
                android:hint="Titolo"
@@ -52,7 +52,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="?attr/actionBarSize"
                 app:layout_collapseMode="pin"
-                app:popupTheme="@style/Theme.Note.PopupOverlay" />
+                app:popupTheme="@style/Theme.NavigationBar" />
 
         </com.google.android.material.appbar.CollapsingToolbarLayout>
     </com.google.android.material.appbar.AppBarLayout>
@@ -63,7 +63,7 @@
         android:id="@+id/fab"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_margin="@dimen/fab_margin"
+        android:layout_margin="16dp"
         app:layout_anchor="@id/app_bar"
         app:layout_anchorGravity="bottom|end"
         app:srcCompat="@drawable/ic_save"
