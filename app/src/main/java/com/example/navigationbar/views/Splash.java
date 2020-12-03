@@ -2,31 +2,60 @@ package com.example.navigationbar.views;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.animation.Animator;
 import android.content.Intent;
 import android.os.Bundle;
 import android.os.Handler;
 
 import com.example.navigationbar.R;
+import com.example.navigationbar.databinding.ActivitySplashBinding;
 
 public class Splash extends AppCompatActivity {
     Handler handler;
+    ActivitySplashBinding activitySplashBinding;
 
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_splash);
+        activitySplashBinding=ActivitySplashBinding.inflate(getLayoutInflater());
+
+        setContentView(activitySplashBinding.getRoot());
 
         //intro che non ho fatto commint ancora
-
-        handler=new Handler();
-        handler.postDelayed(new Runnable() {
+        activitySplashBinding.animationView.addAnimatorListener(new Animator.AnimatorListener() {
             @Override
-            public void run() {
-                startActivity(new Intent(getApplicationContext(), MainActivity1.class));
-                finish();
+            public void onAnimationStart(Animator animator) {
+
             }
-        },3000);
+
+            @Override
+            public void onAnimationEnd(Animator animator) {
+                handler=new Handler();
+                handler.postDelayed(new Runnable() {
+                    @Override
+                    public void run() {
+                        startActivity(new Intent(getApplicationContext(), MainActivity1.class));
+                        finish();
+                    }
+                },3000);
+
+
+            }
+
+            @Override
+            public void onAnimationCancel(Animator animator) {
+
+            }
+
+            @Override
+            public void onAnimationRepeat(Animator animator) {
+
+            }
+        });
+
+
+
 
 
 
