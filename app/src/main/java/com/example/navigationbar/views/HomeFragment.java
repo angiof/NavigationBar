@@ -15,11 +15,7 @@ public class HomeFragment extends Fragment {
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
-        //uuu
-        //hh
-        //Home
-        // Inflate the layout for this fragment
-        //davide
+
         return inflater.inflate(R.layout.fragment_home, container, false);
     }
 }
