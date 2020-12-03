@@ -7,6 +7,7 @@ import android.view.View;
 import android.view.ViewGroup;
 
 import androidx.appcompat.widget.Toolbar;
+import androidx.core.content.ContextCompat;
 import androidx.fragment.app.Fragment;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
@@ -34,18 +35,19 @@ public class SchedeFragment extends Fragment {
     private static RecyclerViewAdapter adapter;
     private static Context baseContext;
     private static View viewLayout;
+    private  static SchedeFragment contextCompat;
+
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
         View view= inflater.inflate(R.layout.fragment_Schede, container, false);
 
-
         Toolbar toolbar = view.findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
 
         //a causa della mancanza di staticità ho richiamato il contest rendendolo statico(vedere get value)
-        baseContext=SchedeFragment.this;
+        contextCompat=SchedeFragment.this;
 
         //ho dovuto richiamare il layout per poter richiamare la recycler dentro get value(vedere get value)
         viewLayout= fragmentSchedeBinding.viewLayout;
