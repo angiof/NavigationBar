@@ -6,8 +6,6 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 
-import androidx.appcompat.widget.Toolbar;
-import androidx.core.content.ContextCompat;
 import androidx.fragment.app.Fragment;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
@@ -27,15 +25,15 @@ import java.util.List;
 public class SchedeFragment extends Fragment {
 
     FragmentSchedeBinding fragmentSchedeBinding;
-    //holaaf
+
 
     private static SchedeDatabase db;
     private static List<Schede> schedes;
     private static RecyclerView recyclerView;
     private static RecyclerViewAdapter adapter;
-    private static Context baseContext;
+
     private static View viewLayout;
-    private  static SchedeFragment contextCompat;
+    private static Context baseContext;
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
@@ -43,11 +41,9 @@ public class SchedeFragment extends Fragment {
         // Inflate the layout for this fragment
         View view= inflater.inflate(R.layout.fragment_Schede, container, false);
 
-        Toolbar toolbar = view.findViewById(R.id.toolbar);
-        setSupportActionBar(toolbar);
 
         //a causa della mancanza di staticità ho richiamato il contest rendendolo statico(vedere get value)
-        contextCompat=SchedeFragment.this;
+        baseContext = getActivity();
 
         //ho dovuto richiamare il layout per poter richiamare la recycler dentro get value(vedere get value)
         viewLayout= fragmentSchedeBinding.viewLayout;
@@ -55,7 +51,7 @@ public class SchedeFragment extends Fragment {
 
         //richiamo il database per correttezza creo un costrutto if ponendo istanza uguale a null
         if (savedInstanceState == null) {
-            db = Room.databaseBuilder(this, SchedeDatabase.class, "note_database")
+            db = Room.databaseBuilder(baseContext, SchedeDatabase.class, "note_database")
                     .allowMainThreadQueries().fallbackToDestructiveMigration().build();
         }
 
@@ -63,16 +59,12 @@ public class SchedeFragment extends Fragment {
         getValue();
 
         //intent che porta all'editactivity che usa come azione la chear a
-        fragmentSchedeBinding.fab.setOnClickListener((view) -> {
-            startActivity(EditActivity.getIntentEdit(SchedeFragment.this,'a'));
-
-
+        fragmentSchedeBinding.fab.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                startActivity(EditActivity.getIntentEdit(baseContext, 'a'));
+            }
         });
-
-
-
-
-
 
 
         return view;
