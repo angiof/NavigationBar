@@ -2,16 +2,15 @@ package com.example.navigationbar.views;
 
 import android.content.Context;
 import android.os.Bundle;
+import android.view.LayoutInflater;
+import android.view.View;
+import android.view.ViewGroup;
 
 import androidx.appcompat.widget.Toolbar;
 import androidx.fragment.app.Fragment;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 import androidx.room.Room;
-
-import android.view.LayoutInflater;
-import android.view.View;
-import android.view.ViewGroup;
 
 import com.example.navigationbar.LeTueSchedePackage.Database.SchedeDatabase;
 import com.example.navigationbar.LeTueSchedePackage.DettailsActivity;
@@ -27,7 +26,7 @@ import java.util.List;
 public class SchedeFragment extends Fragment {
 
     FragmentSchedeBinding fragmentSchedeBinding;
-
+    //holaa
 
     private static SchedeDatabase db;
     private static List<Schede> schedes;
