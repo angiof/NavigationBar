@@ -35,9 +35,20 @@ public class MainActivity1 extends AppCompatActivity {
     }
 
     private void Home() {
-        activityMain1Binding.viewPager.setCurrentItem(1);
-        activityMain1Binding.chipNavigation.setItemSelected(R.id.home, true);
-        getSupportFragmentManager().beginTransaction().replace(R.id.container, new HomeFragment()).commit();
+
+        String inputExtra;
+        inputExtra = getIntent().getStringExtra("key0");
+        if (!(inputExtra == null)) {
+            activityMain1Binding.viewPager.setCurrentItem(0);
+            activityMain1Binding.chipNavigation.setItemSelected(R.id.info, true);
+            inputExtra = null;
+        } else {
+            activityMain1Binding.viewPager.setCurrentItem(1);
+            activityMain1Binding.chipNavigation.setItemSelected(R.id.home, true);
+            getSupportFragmentManager().beginTransaction().replace(R.id.container, new HomeFragment()).commit();
+        }
+
+
     }
 
     private void fragmentSwitch() {
