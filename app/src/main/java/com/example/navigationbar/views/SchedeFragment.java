@@ -17,35 +17,36 @@ import com.example.navigationbar.LeTueSchedePackage.EditActivity;
 import com.example.navigationbar.LeTueSchedePackage.Schede;
 import com.example.navigationbar.R;
 import com.example.navigationbar.adapter.RecyclerViewAdapter;
-import com.google.android.material.floatingactionbutton.FloatingActionButton;
+import com.example.navigationbar.databinding.FragmentSchedeBinding;
 
 import java.util.List;
 
 
 public class SchedeFragment extends Fragment {
 
+    FragmentSchedeBinding fragmentSchedeBinding;
 
 
     private static SchedeDatabase db;
     private static List<Schede> schedes;
     private static RecyclerView recyclerView;
     private static RecyclerViewAdapter adapter;
+
     private static View viewLayout;
     private static Context baseContext;
-    private static FloatingActionButton button;
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
-        View view = inflater.inflate(R.layout.fragment_schede, container, false);
+        View view= inflater.inflate(R.layout.fragment_Schede, container, false);
 
 
         //a causa della mancanza di staticità ho richiamato il contest rendendolo statico(vedere get value)
         baseContext = getActivity();
 
         //ho dovuto richiamare il layout per poter richiamare la recycler dentro get value(vedere get value)
-        viewLayout = view.findViewById(R.id.viewLayout);
+        viewLayout= fragmentSchedeBinding.viewLayout;
 
 
         //richiamo il database per correttezza creo un costrutto if ponendo istanza uguale a null
@@ -58,11 +59,7 @@ public class SchedeFragment extends Fragment {
         getValue();
 
         //intent che porta all'editactivity che usa come azione la chear a
-
-
-        button = view.findViewById(R.id.aggiungi);
-
-        button.setOnClickListener(new View.OnClickListener() {
+        fragmentSchedeBinding.fab.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 startActivity(EditActivity.getIntentEdit(baseContext, 'a'));
