@@ -1,13 +1,12 @@
 package com.example.navigationbar.views;
 
-import androidx.appcompat.app.AppCompatActivity;
-
 import android.animation.Animator;
 import android.content.Intent;
 import android.os.Bundle;
 import android.os.Handler;
 
-import com.example.navigationbar.R;
+import androidx.appcompat.app.AppCompatActivity;
+
 import com.example.navigationbar.databinding.ActivitySplashBinding;
 
 public class Splash extends AppCompatActivity {
@@ -18,7 +17,7 @@ public class Splash extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        activitySplashBinding=ActivitySplashBinding.inflate(getLayoutInflater());
+        activitySplashBinding = ActivitySplashBinding.inflate(getLayoutInflater());
 
         setContentView(activitySplashBinding.getRoot());
 
@@ -31,14 +30,6 @@ public class Splash extends AppCompatActivity {
 
             @Override
             public void onAnimationEnd(Animator animator) {
-                handler=new Handler();
-                handler.postDelayed(new Runnable() {
-                    @Override
-                    public void run() {
-                        startActivity(new Intent(getApplicationContext(), MainActivity1.class));
-                        finish();
-                    }
-                },3000);
 
 
             }
@@ -50,13 +41,11 @@ public class Splash extends AppCompatActivity {
 
             @Override
             public void onAnimationRepeat(Animator animator) {
+                startActivity(new Intent(getApplicationContext(), MainActivity1.class));
+
 
             }
         });
-
-
-
-
 
 
     }
