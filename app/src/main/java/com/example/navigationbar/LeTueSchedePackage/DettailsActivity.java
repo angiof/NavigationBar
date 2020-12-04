@@ -77,17 +77,17 @@ public class DettailsActivity extends AppCompatActivity {
            });
     }
 
-    private void showAlert(String title,String message){
-        AlertDialog.Builder builder= new AlertDialog.Builder(DettailsActivity.this);
+     void showAlert(String title, String message) {
+         AlertDialog.Builder builder = new AlertDialog.Builder(DettailsActivity.this);
 
-        builder.setTitle(title);
-        builder.setMessage(message);
-        builder.setCancelable(true);
-        builder.setPositiveButton("si", new DialogInterface.OnClickListener() {
-            @Override
-            public void onClick(DialogInterface dialog, int which) {
-              db.schedeDao().delete(schede);
-              SchedeFragment.adapterNotifyAll();
+         builder.setTitle(title);
+         builder.setMessage(message);
+         builder.setCancelable(true);
+         builder.setPositiveButton("si", new DialogInterface.OnClickListener() {
+             @Override
+             public void onClick(DialogInterface dialog, int which) {
+                 db.schedeDao().delete(schede);
+                 SchedeFragment.adapterNotifyAll();
               finish();
                 Toast.makeText(DettailsActivity.this, "Nota eliminata", Toast.LENGTH_SHORT).show();
             }
@@ -104,11 +104,11 @@ public class DettailsActivity extends AppCompatActivity {
     }
 
     //funzione che riceve dati a seconda dell'azione
-    public static Intent getDettailsIntent(Context context,Schede schede){
-     Intent intent = new Intent(context, DettailsActivity.class);
-     intent.putExtra( KEY, schede);
-     
-     return intent;
+    public static Intent getDettailsIntent(Context context, Schede schede) {
+        Intent intent = new Intent(context, DettailsActivity.class);
+        intent.putExtra(KEY, schede);
+
+        return intent;
 
     }
 }

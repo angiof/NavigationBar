@@ -21,13 +21,11 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
+        <![CDATA[
 
 
         />
-        <activity
-            android:name=".LeTueSchedePackage.DettailsActivity"
-            android:label="ScrollingActivity"
-            android:theme="@style/AppTheme"></activity>
+        ]]>
         <activity
             android:name=".LeTueSchedePackage.EditActivity"
             android:label="ScrollingActivity"
