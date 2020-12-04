@@ -6,6 +6,7 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 
+import androidx.annotation.NonNull;
 import androidx.fragment.app.Fragment;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
@@ -23,7 +24,6 @@ import java.util.List;
 
 
 public class SchedeFragment extends Fragment {
-
 
 
     private static SchedeDatabase db;
@@ -71,20 +71,24 @@ public class SchedeFragment extends Fragment {
 
         return view;
     }
+
     private static void getValue() {
         schedes = db.schedeDao().getAll();
-        recyclerView = viewLayout.findViewById(R.id.recyclerView);
+        //  recyclerView = viewLayout.findViewById(R.id.recyclerView);
+        recyclerView = (RecyclerView) viewLayout.findViewById(R.id.recyclerView);
+
+
         final LinearLayoutManager linearLayoutManager = new LinearLayoutManager(baseContext);
         linearLayoutManager.setOrientation(LinearLayoutManager.VERTICAL);
         recyclerView.setLayoutManager(linearLayoutManager);
-        adapter=new RecyclerViewAdapter(schedes,baseContext);
+        adapter = new RecyclerViewAdapter(schedes, baseContext);
         recyclerView.setAdapter(adapter);
 
 
     }
 
     //salvataggio delle modifiche richiamato nei layout scrolling
-    public static void adapterNotifyAll(){
+    public static void adapterNotifyAll() {
 
         getValue();
 
@@ -94,4 +98,6 @@ public class SchedeFragment extends Fragment {
     public static void sendObject(Context context, int position) {
         context.startActivity(DettailsActivity.getDettailsIntent(context, schedes.get(position)));
     }
+
+
 }
