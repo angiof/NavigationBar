@@ -4,14 +4,12 @@ import android.animation.Animator;
 import android.content.Intent;
 import android.os.Bundle;
 import android.os.Handler;
-import android.view.View;
 
 import androidx.appcompat.app.AppCompatActivity;
 
 import com.example.navigationbar.databinding.ActivitySplashBinding;
 
 public class Splash extends AppCompatActivity {
-    Handler handler;
     ActivitySplashBinding activitySplashBinding;
 
 
@@ -24,6 +22,7 @@ public class Splash extends AppCompatActivity {
 
         //intro che non ho fatto commint ancora
         activitySplashBinding.animationView.addAnimatorListener(new Animator.AnimatorListener() {
+            //queste sono le funzioni di una animazione
             @Override
             public void onAnimationStart(Animator animator) {
 
@@ -42,16 +41,10 @@ public class Splash extends AppCompatActivity {
 
             @Override
             public void onAnimationRepeat(Animator animator) {
-                // startActivity(new Intent(getApplicationContext(), MainActivity1.class));
+                //con questo activity lambda fai tutto di un solo colpo
+                startActivity(new Intent(getApplicationContext(), MainActivity1.class));
 
 
-            }
-        });
-        activitySplashBinding.button.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                Intent intent = new Intent(Splash.this, MainActivity1.class);
-                startActivity(intent);
             }
         });
 
