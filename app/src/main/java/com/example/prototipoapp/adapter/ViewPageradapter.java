@@ -1,13 +1,13 @@
-package com.example.navigationbar.adapter;
+package com.example.prototipoapp.adapter;
 
 import androidx.annotation.NonNull;
 import androidx.fragment.app.Fragment;
 import androidx.fragment.app.FragmentManager;
 import androidx.fragment.app.FragmentStatePagerAdapter;
 
-import com.example.navigationbar.views.ChatFragment;
-import com.example.navigationbar.views.HomeFragment;
-import com.example.navigationbar.views.SchedeFragment;
+import com.example.prototipoapp.views.ChatFragment;
+import com.example.prototipoapp.views.HomeFragment;
+import com.example.prototipoapp.views.SchedeFragment;
 
 public class ViewPageradapter extends FragmentStatePagerAdapter {
 

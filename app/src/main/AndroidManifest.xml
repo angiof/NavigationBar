@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
-    package="com.example.navigationbar">
+    package="com.example.prototipoapp">
 
     <application
         android:allowBackup="true"
@@ -11,7 +11,7 @@
         android:theme="@style/Theme.NavigationBar">
 
         <activity
-            android:name=".views.Splash"
+            android:name="com.example.prototipoapp.views.Splash"
             android:theme="@style/Theme.AppCompat">
 
 
@@ -21,17 +21,9 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <![CDATA[
 
 
-        />
-        ]]>
-        <activity
-            android:name=".LeTueSchedePackage.EditActivity"
-            android:label="ScrollingActivity"
-            android:theme="@style/AppTheme" />
-
-        <activity android:name=".views.MainActivity1">
+        <activity android:name="com.example.prototipoapp.views.MainActivity1">
 
 
         </activity>

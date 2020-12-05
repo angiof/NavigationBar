@@ -1,4 +1,4 @@
-package com.example.navigationbar.views;
+package com.example.prototipoapp.views;
 
 import android.content.Context;
 import android.os.Bundle;
@@ -6,18 +6,17 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 
-import androidx.annotation.NonNull;
 import androidx.fragment.app.Fragment;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 import androidx.room.Room;
 
-import com.example.navigationbar.LeTueSchedePackage.Database.SchedeDatabase;
-import com.example.navigationbar.LeTueSchedePackage.DettailsActivity;
-import com.example.navigationbar.LeTueSchedePackage.EditActivity;
-import com.example.navigationbar.LeTueSchedePackage.Schede;
-import com.example.navigationbar.R;
-import com.example.navigationbar.adapter.RecyclerViewAdapter;
+import com.example.prototipoapp.LeTueSchedePackage.Database.SchedeDatabase;
+import com.example.prototipoapp.LeTueSchedePackage.DettailsActivity;
+import com.example.prototipoapp.LeTueSchedePackage.EditActivity;
+import com.example.prototipoapp.LeTueSchedePackage.Schede;
+import com.example.prototipoapp.R;
+import com.example.prototipoapp.adapter.RecyclerViewAdapter;
 import com.google.android.material.floatingactionbutton.FloatingActionButton;
 
 import java.util.List;

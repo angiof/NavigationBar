@@ -1,13 +1,12 @@
-package com.example.navigationbar.views;
+package com.example.prototipoapp.views;
 
 import android.animation.Animator;
 import android.content.Intent;
 import android.os.Bundle;
-import android.os.Handler;
 
 import androidx.appcompat.app.AppCompatActivity;
 
-import com.example.navigationbar.databinding.ActivitySplashBinding;
+import com.example.prototipoapp.databinding.ActivitySplashBinding;
 
 public class Splash extends AppCompatActivity {
     ActivitySplashBinding activitySplashBinding;

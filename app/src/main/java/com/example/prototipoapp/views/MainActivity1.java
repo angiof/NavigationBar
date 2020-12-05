@@ -1,4 +1,4 @@
-package com.example.navigationbar.views;
+package com.example.prototipoapp.views;
 
 import android.os.Bundle;
 
@@ -7,9 +7,9 @@ import androidx.fragment.app.Fragment;
 import androidx.fragment.app.FragmentStatePagerAdapter;
 import androidx.viewpager.widget.ViewPager;
 
-import com.example.navigationbar.R;
-import com.example.navigationbar.adapter.ViewPageradapter;
-import com.example.navigationbar.databinding.ActivityMain1Binding;
+import com.example.prototipoapp.R;
+import com.example.prototipoapp.adapter.ViewPageradapter;
+import com.example.prototipoapp.databinding.ActivityMain1Binding;
 import com.ismaeldivita.chipnavigation.ChipNavigationBar;
 
 public class MainActivity1 extends AppCompatActivity {

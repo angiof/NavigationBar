@@ -1,14 +1,13 @@
-package com.example.navigationbar.views;
+package com.example.prototipoapp.views;
 
 import android.os.Bundle;
-
-import androidx.fragment.app.Fragment;
-
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 
-import com.example.navigationbar.R;
+import androidx.fragment.app.Fragment;
+
+import com.example.prototipoapp.R;
 
 
 public class ChatFragment extends Fragment {
